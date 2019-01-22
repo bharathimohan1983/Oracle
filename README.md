@@ -5,6 +5,7 @@ Option 1:
 select sum(bytes / (1024*1024)) "DB Size in MB" from dba_data_files; 
 
 Option 2:
+
 SELECT a.data_size + b.temp_size + c.redo_size + d.controlfile_size 
 "total_size in GB" 
 FROM (SELECT SUM (bytes) / 1024 / 1024/1024 data_size FROM dba_data_files) a, 
